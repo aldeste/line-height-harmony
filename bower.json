@@ -1,0 +1,23 @@
+{
+  "name": "line-height-harmony",
+  "version": "1.0.0",
+  "homepage": "https://github.com/aldeste/line-height-harmony",
+  "authors": [
+    "Alexander D'Este <alexander.deste@gmail.com>"
+  ],
+  "description": "Algorithm generating line-heights based on a harmonic ratio for SCSS",
+  "main": "dist/_line-height-harmony.scss",
+  "keywords": [
+    "SCSS",
+    "SASS",
+    "line-height"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "line-height-harmony",
+  "version": "1.0.0",
+  "description": "Algorithm generating line-heights based on a harmonic ratio for SCSS",
+  "main": "dist/_line-height-harmony.scss",
+  "scripts": {
+    "lint": "scss-lint . --config ./.scss-lint.yml"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aldeste/line-height-harmony.git"
+  },
+  "keywords": [
+    "SCSS",
+    "SASS",
+    "line-height"
+  ],
+  "author": {
+    "name": "Alexander D'Este",
+    "email": "alexanderdeste@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aldeste/line-height-harmony/issues"
+  },
+  "homepage": "https://github.com/aldeste/line-height-harmony#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-load-plugins": "^0.10.0"
+  }
+}
