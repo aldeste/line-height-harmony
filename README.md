@@ -1,6 +1,17 @@
 # line-height-harmony
 Algorithm generating line-heights based on a harmonic ratio for SCSS
 
+## Installation
+
+If you're using bower:
+```
+bower install line-height-harmony
+```
+You can also get it manually by downloading [this file.](https://github.com/aldeste/line-height-harmony/blob/master/dist/_line-height-harmony.scss)
+
+All that remains is to @include it into your scss directory and you're ready to play.
+
+## Usage
 The function requires two values on use; `font-size` and `width`.
 The `font-size` is the font-size we're applying the algorithm to.
 The `width` is the width of the text area. In a real world scenario this isn't always a known factor, so I've found that setting it to the breakpoint width or container width creates a great uniform rythm.
