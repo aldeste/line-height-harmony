@@ -1,14 +1,21 @@
+//
+// Returns custom or default settings value. If no default value is configured
+// returns project default, 1.61803398875.
+//
 @function line-height-harmony-get-ratio($ratio: null) {
-  @if ($ratio == null and map-has-key($line-height-harmony-settings, ratio) == true) {
-    @return map-get($line-height-harmony-settings, ratio);
-  } @else if not ($ratio == null) {
+  @if not ($ratio == null) {
     @return $ratio;
+  } @else if map-has-key($line-height-harmony-settings, ratio) {
+    @return map-get($line-height-harmony-settings, ratio);
   } @else {
-    @warn "'ratio' not found in line-height-harmony-settings. Golden ratio assumed.";
     @return 1.61803398875;
   }
 }
 
+//
+// Returns custom or default settings value. If no default value is configured
+// returns project default, 16px.
+//
 @function line-height-harmony-get-font-size-root($font-size-root) {
   @if (map-has-key($line-height-harmony-settings, font-size-root) == true) {
     $default: map-get($line-height-harmony-settings, font-size-root);
@@ -18,28 +25,29 @@
       @return line-height-harmony-convert-to-px($font-size-root, $default);
     }
   } @else {
-    @warn "'font-size-root' not found in your line-height-harmony-settings. 16px root assumed.";
     @return 16px;
   }
 }
 
-/**
- * The line algorythm is based on pixel size, so we're converting presumed for use
- *
- * @param {string/number} $number             Number to convert to unitless px
- * @param {string/number} $font-size-root     Number for REM conversion.
- * @param {string}        $font-or-width      Determines which default to fall back to
- */
+//
+// The line algorythm is based on pixel size, so we're converting presumed for use
+//
+// @param {string/number} $number             Number to convert to unitless px
+// @param {string/number} $font-size-root     Number for REM conversion.
+// @param {string}        $font-or-width      Determines which default to fall back to
+//
 @function line-height-harmony-convert-to-px($number, $font-size-root, $font-or-width: null) {
   $unit: unit($number);
   $number: strip-unit($number);
-  @if($font-or-width == 'font' and $unit == '') {@if map-has-key($line-height-harmony-settings, font-size-unit) {
+  @if($font-or-width == 'font' and $unit == '') {
+    @if map-has-key($line-height-harmony-settings, font-size-unit) {
     $unit: map-get($line-height-harmony-settings, font-size-unit);
-  } @else {
+    } @else {
       $unit: 'em';
     }
   }
-  @if($font-or-width == 'width' and $unit == '') {@if map-has-key($line-height-harmony-settings, width-unit) {
+  @if($font-or-width == 'width' and $unit == '') {
+    @if map-has-key($line-height-harmony-settings, width-unit) {
       $unit: map-get($line-height-harmony-settings, width-unit);
     } @else {
       $unit: 'px';
@@ -54,9 +62,9 @@
   @return $number;
 }
 
-/**
- * Remove unit from numbers
- */
+//
+// Remove unit from numbers
+//
 @function strip-unit($number) {
   $n: $number / ($number * 0 + 1);
   @return $n;

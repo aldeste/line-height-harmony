@@ -1,9 +1,9 @@
-/**
- * Raise number to the nth power
- *
- * @param {number} $base      The base number
- * @param {number} $exponents The exponent to which to raise $base
- */
+//
+// Raise number to the nth power
+//
+// @param {number} $base      The base number
+// @param {number} $exponents The exponent to which to raise $base
+//
 @function pow($base, $exponents) {
   $raised: 1;
   @if $exponents > 0 {
